@@ -37,6 +37,36 @@ def signUp(request):
     return render(request,'registration/registration_form.html',{'form':form})
 
 
+def photos(request):
+    title = 'Creative || Hub'
+    posts = Post.objects.all()
+    form = NewsLetterForm()
+    return render(request,'photo.html',{'posts':posts , 'title':title, 'form':form})
+
+
+
+def post_image(request):
+    title = 'Creative || Hub'
+    if request.method == 'POST':
+        form = PostImagesForm(request.POST,request.FILES) 
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect(photos)
+            
+    else:
+        form = PostImagesForm()
+        print('method is not post')
+        
+    try:
+        posts = Post.objects.all()
+    except Post.DoesNotExist:
+        posts = None
+    return render(request,'post_image.html',{'posts': posts, 'form':form, 'title':title})
+
+
+
 @login_required(login_url="/accounts/login/")
 def logout_request(request):
     logout(request)
@@ -56,6 +86,23 @@ def profile(request, username):
         profile_details = Profile.filter_by_id(profile.id)
         
     return render(request, 'profile.html', {'title': title, 'following':following, 'follow':follow, 'users':users, 'people_following':people_following, 'profile_details':profile_details})
+
+def edit_profile(request, username):
+    title = 'Creative || Hub'
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if prof_form.is_valid():
+            
+            prof_form.save()
+            return redirect('profile', user.username)
+    else:
+        prof_form = UpdateUserProfileForm(instance=request.user.profile)
+    params = {
+        'prof_form': prof_form,
+        'title': title
+    }
+    return render(request, 'edit.html', params)
 
 
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'carhubapp',
     'bootstrap4',
+    'friendship',
 ]
 
 MIDDLEWARE = [
