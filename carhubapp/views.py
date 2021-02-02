@@ -33,3 +33,18 @@ def signUp(request):
 def logout_request(request):
     logout(request)
     return redirect('home')
+
+def profile(request, username):
+    title = 'Creative || Hub'
+    profile = User.objects.get(username=username)
+    users = User.objects.get(username=username)
+    follow = len(Follow.objects.followers(users))
+    following = len(Follow.objects.following(users))
+    people_following = Follow.objects.following(request.user)
+    
+    try:
+        profile_details = Profile.get_by_id(profile.id)
+    except:
+        profile_details = Profile.filter_by_id(profile.id)
+        
+    return render(request, 'profile.html', {'title': title, 'following':following, 'follow':follow, 'users':users, 'people_following':people_following, 'profile_details':profile_details})
