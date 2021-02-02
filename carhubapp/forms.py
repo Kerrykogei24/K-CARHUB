@@ -28,3 +28,8 @@ class NewsLetterForm(forms.Form):
     email = forms.EmailField(label='Email')                                                                                    
 
     
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(help_text='Enter Email!')
+    class Meta:
+        model = User
+        fields = ('username','email','password1','password2')

@@ -1,0 +1,405 @@
+.landing {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("https://www.gratefulgypsies.com/wp-content/uploads/2017/07/DSC08690-001.jpg");
+    background-size: cover;
+}
+
+.intro {
+    padding: 25%;
+    color: white;
+}
+
+hr.style-three {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-three:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: white;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #C0BFBE;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: white;
+}
+
+
+/* Change navbar styling on scroll */
+
+.navbar.active {
+    background: black;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: white;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: white;
+}
+
+
+/* Change navbar styling on small viewports */
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background: black;
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: white;
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+.hub {
+    color: black;
+    font-family: 'Abel', sans-serif;
+    font-size: 75px;
+    text-shadow: 2px 2px hsla(hue, saturation, lightness, alpha);
+}
+
+.tit,
+.desc,
+.user,
+.dat {
+    color: black;
+}
+
+.desc {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+.tit {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.image-box {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-box img {
+    transition: all 0.3s;
+    display: block;
+    height: auto;
+    transform: scale(1);
+    filter: grayscale(0);
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
+    filter: grayscale(70%);
+}
+
+.bac {
+    background-color: #D0D3D4;
+}
+
+.vida {
+    position: relative;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vida video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.vida .container {
+    position: relative;
+    z-index: 2;
+}
+
+.vida .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    .vida {
+        background: url('static/images/picture.jpg') black no-repeat center center scroll;
+    }
+    .vida video {
+        display: none;
+    }
+}
+
+.bet {
+    font-family: 'Gupter', serif;
+    font-size: 70px;
+    color: #D7DBDD;
+    font-weight: bolder;
+    text-shadow: 3px 3px #707B7C;
+}
+
+.para {
+    font-family: 'Baskervville', serif;
+    font-size: 20px;
+}
+
+.icon {
+    margin-top: 4%;
+}
+
+.fa,
+.ta,
+.in {
+    height: 100px;
+    width: 100px;
+    display: absolute;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    padding: 20%;
+    border: solid;
+    margin: 20px;
+}
+
+.fa {
+    color: #4A235A;
+    text-decoration: none;
+}
+
+.ta {
+    color: blue;
+    text-decoration: none;
+}
+
+.in {
+    color: red;
+    text-decoration: none;
+}
+
+.fa:hover {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+}
+
+.ta:hover {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+}
+
+.in:hover {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+}
+
+.bra {
+    font-family: 'BenchNine', sans-serif;
+    font-size: 40px;
+}
+
+.ed {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+#nab {
+    font-family: 'Pragati Narrow', sans-serif;
+    font-size: 20px;
+}
+
+#a {
+    color: #1C2833;
+}
+
+#t {
+    color: #641E16;
+}
+
+#r {
+    color: #145A32;
+}
+
+#s {
+    color: #1A5276;
+}
+
+.bottom {
+    padding-top: 40px;
+}
+
+.commo {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+}
+
+.com {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.use {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ny {
+    background-color: #D0D3D4;
+}
+
+.no {
+    font-family: 'Rajdhani', sans-serif;
+    font-style: italic;
+}
+
+.site {
+    color: black;
+    text-decoration: none;
+}
+
+.site:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.tal,
+.dai,
+.term {
+    font-family: 'Poiret One', cursive;
+    font-size: 40px;
+}
+
+.an {
+    font-family: 'Scheherazade', serif;
+    font-size: 20px;
+}
+
+.copy {
+    font-family: 'Carrois Gothic', sans-serif;
+    padding-bottom: 20px;
+}
+
+.bot {
+    background-color: #95A5A6;
+}
+
+.word {
+    margin: 15px;
+}
+
+.miss {
+    background: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("https://www.molotow.com/fileadmin/Dateien/_processed_/1/6/csm_Premium_1400x870_Corp_f9863bc249.jpg") center/cover no-repeat fixed;
+    min-height: 50vh;
+    padding: 15%;
+    color: white;
+}
+
+.info {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.abo {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.ace,
+.wit,
+.nsta {
+    color: black;
+    font-family: 'Scheherazade', serif;
+    font-size: 20px;
+}
+
+.mission,
+.vision,
+.acco {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.pa1,
+.pa2,
+.pa3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+}
+
+.test {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.tim {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.sing {
+    font-size: 160%;
+}
+
+.jumbotron {
+    background-color: #2ECC71;
+}
