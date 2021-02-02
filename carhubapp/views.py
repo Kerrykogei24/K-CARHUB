@@ -40,7 +40,7 @@ def signUp(request):
 
 
 def photos(request):
-    title = 'Creative || Hub'
+    title = 'Car || Hub'
     posts = Post.objects.all()
     form = NewsLetterForm()
     return render(request,'photo.html',{'posts':posts , 'title':title, 'form':form})
@@ -48,7 +48,7 @@ def photos(request):
 
 
 def post_image(request):
-    title = 'Creative || Hub'
+    title = 'Car|| Hub'
     if request.method == 'POST':
         form = PostImagesForm(request.POST,request.FILES) 
         if form.is_valid():
@@ -75,7 +75,7 @@ def logout_request(request):
     return redirect('home')
 
 def profile(request, username):
-    title = 'K CAR || Hub'
+    title = ' Car || Hub'
     profile = User.objects.get(username=username)
     users = User.objects.get(username=username)
     follow = len(Follow.objects.followers(users))
@@ -90,7 +90,7 @@ def profile(request, username):
     return render(request, 'profile.html', {'title': title, 'following':following, 'follow':follow, 'users':users, 'people_following':people_following, 'profile_details':profile_details})
 
 def edit_profile(request, username):
-    title = 'Creative || Hub'
+    title = 'Car || Hub'
     user = User.objects.get(username=username)
     if request.method == 'POST':
         prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -109,7 +109,7 @@ def edit_profile(request, username):
 
 
 def single_car(request, art_id): 
-    title = 'Creative || Hub'
+    title = 'Car || Hub'
     arts = Post.objects.get(id=art_id)
     comments = Comments.get_comment_by_image(id = art_id)
     

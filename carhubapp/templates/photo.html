@@ -7,32 +7,17 @@
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-                <h1 class="display-3 bet animated zoomInDown" style="animation-delay: 1s;">CreativeHub</h1>
-                <p class="lead mb-0 para animated slideInLeft" style='animation-delay: 2s;'>"Painting is easy when you do not know how, but difficult when you know how"</p>
-                <p class="ed animated slideInLeft" style='animation-delay: 2s;'> ~Edgar Degas </p>
-                <div class="text-center icon">
-                    <ul class="list-inline">
-                        <li class="list-inline-item animated wobble" style='animation-delay: 3s;'>
-                            <a href="https://www.facebook.com/votreART/" target="_blank"><i class="icon-facebook icon-2x fa"></i></a>
-                        </li>
-                        <li class="list-inline-item animated wobble" style='animation-delay: 4s;'>
-                            <a href="https://twitter.com/ArtBasel" target="_blank"><i class="icon-twitter icon-2x ta"></i></a>
-                        </li>
+                <h1 class="display-3 bet animated zoomInDown" style="animation-delay: 1s;">K CARHUB</h1>
+                <p class="lead mb-0 para animated slideInLeft" style='animation-delay: 2s;'>"All human males were as fascinated with cars as they were with breasts."</p>
+                <p class="ed animated slideInLeft" style='animation-delay: 2s;'> ~Anita Clenney </p>
 
-                        <li class="list-inline-item animated wobble" style='animation-delay: 5s;'>
-                            <a href="https://www.instagram.com/tattoos.art/" target="_blank"><i class="icon-instagram icon-2x in"></i></a>
-
-                        </li>
-
-                    </ul>
-                </div>
             </div>
 
         </div>
     </div>
 </header>
 <div class="container-fluid po" style="margin-top: 10%; margin-bottom:5%;">
-    <h3 class="text-center hub"><span id="a">A</span><span id="r">r</span><span id="t">t</span><span id="s">s</span></h3>
+    <h3 class="text-center hub"><span id="a">C</span><span id="r">A</span><span id="t">R</span><span id="s">S</span></h3>
     <div class="row">
         {% for post in posts %}
         <div class="col-md-4" style="margin-top: 7%;">
@@ -48,43 +33,14 @@
         </div>
         {% endfor %}
     </div>
-    <div class="bottom">
-        <footer class="bot">
-            <div class="row word">
-                <div class="col-md-4">
-                    <hr>
-                    <h3 class="tal">Talk to Us</h3>
-                    <p class="info">info@creativehub.com</p>
-                    <a href="{%url 'about'%}"> <span class="abo">About</span></a><br>
-                    <p class="abo" style="margin-top: 2%;">Contact Us</p>
-                    email: info@creativehub.com <br> phone: +254711823644 <br>
-                    <a href="https://www.facebook.com/votreART/" class="ace">Facebook</a><br>
-                    <a href="https://twitter.com/ArtBasel" class="wit">Twitter</a><br>
-                    <a href="https://www.instagram.com/tattoos.art/" class="nsta">Instagram</a>
-                </div>
-                <div class="col-md-4">
-                    <hr>
-                    <h4 class="dai">Daily NewsLetter</h4><br>
-                    <form action="{%url 'photos'%}" method="post">
-                        {%csrf_token%} {% bootstrap_form form %}
-                        <input type="submit" value="Subscribe" class="btn btn-sm bt-outline btn-primary">
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    <hr>
-                    <h5 class="term">Terms and Conditions</h5>
-                    <div class="an">
-                        <p>The site is strictly for art pieces and in no way are you allowed to post inapproriate pieces</p>
-                        <p>The site is totaly free and no one will be asked to pay or provide anything interms of money or tokens</p>
-                        <p>Agreeing to our terms and conditions automatically allow us to have access to your email and username</p>
 
-                    </div>
-
-                </div>
-            </div>
-            <p class="text-center copy">&copyBranTech: All rights-reserved</p>
-        </footer>
-    </div>
 </div>
+<style>
+    .vida {
+        background-image: url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 
 {% endblock %}
