@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url,include
+from django.contrib.auth import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('artist.urls')),
-    path('accounts/', include('django_registration.backends.one_step.urls')),
+    path('', include('carhubapp.urls')),
+    url(r'^accounts/',include('registration.backends.simple.urls')),
 ]
