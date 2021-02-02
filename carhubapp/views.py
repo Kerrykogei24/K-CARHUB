@@ -1,7 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
+from django.http import HttpResponse,Http404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.models import User
 
 # Create your views here.
 
+@login_required(login_url="/accounts/login/")
 def index(request):
     return render(request,'index.html')
 
@@ -17,7 +23,7 @@ def signUp(request):
             name=form.cleaned_data['username']
             email = form.cleaned_data['email']
             send=welcome_email(name,email)
-            HttpResponseRedirect('pics')
+            HttpResponseRedirect('home')
     else:
         form = SignUpForm()
     return render(request,'registration/registration_form.html',{'form':form})
@@ -26,4 +32,4 @@ def signUp(request):
 @login_required(login_url="/accounts/login/")
 def logout_request(request):
     logout(request)
-    return redirect('pics')
+    return redirect('home')
