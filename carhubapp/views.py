@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse,Http404
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
@@ -8,14 +7,13 @@ from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth.decorators import login_required
 from . models import Post, Profile, Comments
 from . forms import PostComments, PostImagesForm,PostProfile, UpdateUserProfileForm, NewsLetterForm,SignUpForm
-from django.contrib.auth.models import User
 from friendship.models import Friend, Follow, Block
 from friendship.exceptions import AlreadyExistsError
 
 
 # Create your views here.
 
-
+@login_required(login_url = '/accounts/login/')
 def index(request):
     title = 'Car || Hub'
     return render(request, 'landing/index.html',{'title': title})
