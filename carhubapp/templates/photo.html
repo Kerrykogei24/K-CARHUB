@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load bootstrap4 %} {% load static%} {% block content %}
+<header class="vida">
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                  <source src="static/images/ODEITH_ANAMORPHIC____Double_corner_3d_letters____2017(720p).mp4" type="video/mp4">
+                </video>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <h1 class="display-3 bet animated zoomInDown" style="animation-delay: 1s;">CreativeHub</h1>
+                <p class="lead mb-0 para animated slideInLeft" style='animation-delay: 2s;'>"Painting is easy when you do not know how, but difficult when you know how"</p>
+                <p class="ed animated slideInLeft" style='animation-delay: 2s;'> ~Edgar Degas </p>
+                <div class="text-center icon">
+                    <ul class="list-inline">
+                        <li class="list-inline-item animated wobble" style='animation-delay: 3s;'>
+                            <a href="https://www.facebook.com/votreART/" target="_blank"><i class="icon-facebook icon-2x fa"></i></a>
+                        </li>
+                        <li class="list-inline-item animated wobble" style='animation-delay: 4s;'>
+                            <a href="https://twitter.com/ArtBasel" target="_blank"><i class="icon-twitter icon-2x ta"></i></a>
+                        </li>
+
+                        <li class="list-inline-item animated wobble" style='animation-delay: 5s;'>
+                            <a href="https://www.instagram.com/tattoos.art/" target="_blank"><i class="icon-instagram icon-2x in"></i></a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="container-fluid po" style="margin-top: 10%; margin-bottom:5%;">
+    <h3 class="text-center hub"><span id="a">A</span><span id="r">r</span><span id="t">t</span><span id="s">s</span></h3>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4" style="margin-top: 7%;">
+            <div class="card">
+                <div class="view overlay image-box">
+                    <a href="{% url 'single-art' post.id %}"><img class="card-img-top" src="{{ post.photo.url }}" style="height: 400px;" alt="{{photo.title}}"></a>
+                    <a href="">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="bottom">
+        <footer class="bot">
+            <div class="row word">
+                <div class="col-md-4">
+                    <hr>
+                    <h3 class="tal">Talk to Us</h3>
+                    <p class="info">info@creativehub.com</p>
+                    <a href="{%url 'about'%}"> <span class="abo">About</span></a><br>
+                    <p class="abo" style="margin-top: 2%;">Contact Us</p>
+                    email: info@creativehub.com <br> phone: +254711823644 <br>
+                    <a href="https://www.facebook.com/votreART/" class="ace">Facebook</a><br>
+                    <a href="https://twitter.com/ArtBasel" class="wit">Twitter</a><br>
+                    <a href="https://www.instagram.com/tattoos.art/" class="nsta">Instagram</a>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h4 class="dai">Daily NewsLetter</h4><br>
+                    <form action="{%url 'photos'%}" method="post">
+                        {%csrf_token%} {% bootstrap_form form %}
+                        <input type="submit" value="Subscribe" class="btn btn-sm bt-outline btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h5 class="term">Terms and Conditions</h5>
+                    <div class="an">
+                        <p>The site is strictly for art pieces and in no way are you allowed to post inapproriate pieces</p>
+                        <p>The site is totaly free and no one will be asked to pay or provide anything interms of money or tokens</p>
+                        <p>Agreeing to our terms and conditions automatically allow us to have access to your email and username</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <p class="text-center copy">&copyBranTech: All rights-reserved</p>
+        </footer>
+    </div>
+</div>
+
+{% endblock %}

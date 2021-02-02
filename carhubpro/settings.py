@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'carhubapp',
     'bootstrap4',
     'friendship',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

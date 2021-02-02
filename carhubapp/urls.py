@@ -7,6 +7,7 @@ from django.urls import path
 urlpatterns=[
     url(r'^$',views.index,name='home'),
     url(r'^logout/$',views.logout_request,name="logout"),
+    path('about/', views.about, name='about'),
     path('postImage/', views.post_image, name='postImage'),
     path('photos', views.photos, name='photos'),
     path('profile/<username>', views.profile, name='profile'),

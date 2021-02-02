@@ -15,12 +15,17 @@ from friendship.exceptions import AlreadyExistsError
 
 # Create your views here.
 
-@login_required(login_url="/accounts/login/")
+
 def index(request):
     return render(request,'index.html')
 
 
-
+def about(request):
+    title = 'Creative || Hub'
+    form = NewsLetterForm()
+    
+    return render(request, 'about.html',{'title': title, 'form': form})
+    
 
 
 def signUp(request):    
@@ -67,7 +72,7 @@ def post_image(request):
 
 
 
-@login_required(login_url="/accounts/login/")
+
 def logout_request(request):
     logout(request)
     return redirect('home')
