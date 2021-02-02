@@ -35,7 +35,7 @@ def logout_request(request):
     return redirect('home')
 
 def profile(request, username):
-    title = 'Creative || Hub'
+    title = 'K CAR || Hub'
     profile = User.objects.get(username=username)
     users = User.objects.get(username=username)
     follow = len(Follow.objects.followers(users))
@@ -48,3 +48,24 @@ def profile(request, username):
         profile_details = Profile.filter_by_id(profile.id)
         
     return render(request, 'profile.html', {'title': title, 'following':following, 'follow':follow, 'users':users, 'people_following':people_following, 'profile_details':profile_details})
+
+
+
+def single_art(request, art_id): 
+    title = 'Creative || Hub'
+    arts = Post.objects.get(id=art_id)
+    comments = Comments.get_comment_by_image(id = art_id)
+    
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostComments(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.arts = arts
+            comment.user = request.user
+            comment.save()
+            return redirect('single-art', art_id = art_id )
+        
+    else:
+        form = PostComments()
+    return render(request, 'single_art.html', {'arts':arts,'form':form, 'comments':comments, 'title':title})
