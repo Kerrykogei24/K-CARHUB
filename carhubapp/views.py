@@ -51,7 +51,7 @@ def profile(request, username):
 
 
 
-def single_art(request, art_id): 
+def single_car(request, art_id): 
     title = 'Creative || Hub'
     arts = Post.objects.get(id=art_id)
     comments = Comments.get_comment_by_image(id = art_id)
@@ -69,3 +69,10 @@ def single_art(request, art_id):
     else:
         form = PostComments()
     return render(request, 'single_art.html', {'arts':arts,'form':form, 'comments':comments, 'title':title})
+
+
+def follow(request, user_id):
+    other_user = User.objects.get(id=user_id)
+    follow = Follow.objects.add_follower(request.user, other_user)
+
+    return redirect('single-car')
