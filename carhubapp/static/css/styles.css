@@ -180,7 +180,7 @@ li {
 
 @media (pointer: coarse) and (hover: none) {
     .vida {
-        background: url('static/images/picture.jpg') black no-repeat center center scroll;
+        background: url('static/image/pexels-simon-migaj-1571783') black no-repeat center center scroll;
     }
     .vida video {
         display: none;
