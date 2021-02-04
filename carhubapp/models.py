@@ -80,3 +80,8 @@ class Comments(models.Model):
     def get_comment_by_image(cls,id):
         comment = Comments.objects.filter(post__pk = id)
         return comment
+
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
