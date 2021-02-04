@@ -3,6 +3,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
+from .views import FlashcardDeleteView
 
 urlpatterns=[
     path('', views.index, name='index'),
@@ -15,6 +16,7 @@ urlpatterns=[
     path('single_art/<art_id>', views.single_car, name='single-car'),
     path('unfollow/<user_id>', views.unfollow, name='unfollow'),
     path('follow/<user_id>', views.follow, name='follow'),
+    path('post/<int:pk>/delete/',FlashcardDeleteView.as_view(), name="deleteForm"),
     
 
 

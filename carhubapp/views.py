@@ -164,7 +164,7 @@ def newsletter(request):
 
 
 class FlashcardDeleteView(DeleteView):
-    model = Picture
+    model = Post
     template_name = 'delete.html'
     success_url = ('/')
 
