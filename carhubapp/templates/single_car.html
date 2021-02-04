@@ -1,13 +1,16 @@
 {% extends 'base.html' %}{% load bootstrap4 %}{% block content %}
 
-<div class="container-fluid" style="margin-top: 10%; margin-bottom: 7%;">
+<div class="container" style="margin-top: 10%; margin-bottom: 7%;">
     <div class="row">
         <div class="col-md-6">
             <div class="card mb-3">
-                <img class="" src="{{ arts.photo.url }}" style="height: 450px;" alt="{{arts.title}}">
+
+                <img class="card-img-top mb-10 img-responsive i-images" src="{{arts.photo.url}}" style="height:300px;width:100%;">
 
                 <div class="card-body ny">
                     <h4 class="card-title tit">{{arts.title}}</h4>
+                    <hr>
+                    <h4 class="card-title tit">{{arts.phone_no}}</h4>
                     <hr>
                     <p class="card-text desc">{{arts.description}}</p>
                     <br>
@@ -26,7 +29,7 @@
 
                 </div>
             </div>
-            <form action="{% url 'single-art' arts.id %}" method="POST" class="">
+            <form action="{% url 'single-car' arts.id %}" method="POST" class="">
                 {% csrf_token %} {% bootstrap_form form %}
                 <input type="submit" class="btn btn-success" value="Update">
             </form>

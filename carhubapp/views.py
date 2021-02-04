@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse,Http404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth.decorators import login_required
@@ -72,7 +73,7 @@ def post_image(request):
 
 def logout_request(request):
     logout(request)
-    return redirect('home')
+    return redirect('/accounts/login/')
 
 def profile(request, username):
     title = ' Car || Hub'
@@ -121,11 +122,11 @@ def single_car(request, art_id):
             comment.arts = arts
             comment.user = request.user
             comment.save()
-            return redirect('single-art', art_id = art_id )
+            return redirect('single-car', art_id = art_id )
         
     else:
         form = PostComments()
-    return render(request, 'single_art.html', {'arts':arts,'form':form, 'comments':comments, 'title':title})
+    return render(request, 'single_car.html', {'arts':arts,'form':form, 'comments':comments, 'title':title})
 
 
 def follow(request, user_id):

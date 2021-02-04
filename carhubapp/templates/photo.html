@@ -1,40 +1,63 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% load static%} {% block content %}
 <header class="vida">
-    <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                  <source src="static/images/ODEITH_ANAMORPHIC____Double_corner_3d_letters____2017(720p).mp4" type="video/mp4">
-                </video>
-    <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-                <h1 class="display-3 bet animated zoomInDown" style="animation-delay: 1s;">K CARHUB</h1>
-                <p class="lead mb-0 para animated slideInLeft" style='animation-delay: 2s;'>"All human males were as fascinated with cars as they were with breasts."</p>
-                <p class="ed animated slideInLeft" style='animation-delay: 2s;'> ~Anita Clenney </p>
+    <div class="overlay">
+
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3 bet animated zoomInDown" style="animation-delay: 1s;">K CARHUB</h1>
+                    <p class="lead mb-0 para animated slideInLeft" style='animation-delay: 2s;'>"All human males were as fascinated with cars as they were with breasts."</p>
+                    <p class="ed animated slideInLeft" style='animation-delay: 2s;'> ~Anita Clenney </p>
+
+                </div>
 
             </div>
-
         </div>
     </div>
 </header>
-<div class="container-fluid po" style="margin-top: 10%; margin-bottom:5%;">
+
+<div class="projects" style="margin-top:120px;">
     <h3 class="text-center hub"><span id="a">C</span><span id="r">A</span><span id="t">R</span><span id="s">S</span></h3>
-    <div class="row">
-        {% for post in posts %}
-        <div class="col-md-4" style="margin-top: 7%;">
-            <div class="card">
-                <div class="view overlay image-box">
-                    <a href="{% url 'single-art' post.id %}"><img class="card-img-top" src="{{ post.photo.url }}" style="height: 400px;" alt="{{photo.title}}"></a>
-                    <a href="">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
 
+                <div class="card" style="height:360px;margin-bottom:10px;">
+                    <div class="card-body">
+
+                        <a href="{% url 'single-car' post.id %}">
+                            <div class="img-cont">
+                                <img class="card-img-top mb-10 img-responsive i-images" src="{{post.photo.url}}" style="height:260px;width:100%;">
+                                <div class="overlay">
+                                    <div class="text">{{post.title}}</div>
+                                    <div class="details"><a href="{% url 'single-car' post.id %}" class="btn btn-info">View Details</a></div>
+                                </div>
+                            </div>
+
+                        </a>
+
+
+                        <br>
+                        <p style="font-size:16px;">By : {{post.user | upper}} <span style="float:right;font-size:16px;">{{post.date | date:"D, d-m-Y"}}</span></p>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
 </div>
+
+
+
 <style>
     .vida {
         background-image: url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
