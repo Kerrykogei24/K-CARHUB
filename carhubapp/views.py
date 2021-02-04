@@ -10,6 +10,13 @@ from . models import Post, Profile, Comments
 from . forms import PostComments, PostImagesForm,PostProfile, UpdateUserProfileForm, NewsLetterForm,SignUpForm
 from friendship.models import Friend, Follow, Block
 from friendship.exceptions import AlreadyExistsError
+from django.views.generic import(
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 
 # Create your views here.
@@ -155,3 +162,13 @@ def newsletter(request):
     return JsonResponse(data)
 
 
+
+class FlashcardDeleteView(DeleteView):
+    model = Picture
+    template_name = 'delete.html'
+    success_url = ('/')
+
+def deleteForm(request):
+    context ={     
+    }
+    return render(request ,'delete.html', context )   
