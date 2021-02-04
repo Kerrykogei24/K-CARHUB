@@ -17,7 +17,7 @@
 </header>
 
 <div class="projects" style="margin-top:120px;">
-    <h3 class="text-center hub"><span id="a">C</span><span id="r">A</span><span id="t">R</span><span id="s">S</span></h3>
+    <h3 class="text-center hub"><span id="a">S</span><span id="r">H</span><span id="t">O</span><span id="s">W</span><span id="a">R</span><span id="r">O</span><span id="t">O</span><span id="s">M</span></h3>
     <div class="container">
         <div class="row">
             {% for post in posts %}
@@ -53,6 +53,43 @@
 
             {% endfor %}
         </div>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <h3 class="text-center">Contact</h3>
+            <p class="text-center"><em>We love our fans!</em></p>
+            <div class="row test">
+                <div class="col-md-4">
+                    <p>Fan? Drop a note.</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+                    <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+                </div>
+                <div class="col-md-8">
+                    <div class="col-md-4">
+                        <hr>
+                        <h4 class="dai">Daily NewsLetter</h4><br>
+                        <form action="{%url 'photos'%}" method="post">
+                            {%csrf_token%} {% bootstrap_form form %}
+                            <input type="submit" value="Subscribe" class="btn btn-sm bt-outline btn-primary">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <button class="btn pull-right" type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bot">
+            <div class="row word">
+
+
+
+            </div>
+
+        </footer>
     </div>
 </div>
 
